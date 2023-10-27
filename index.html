@@ -27,9 +27,9 @@
                     </label>
                 </div>
                 <div class="cnt_luces">
-                    <div id="luz1" class="luces luz1"></div>
-                    <div id="luz2" class="luces luz2"></div>
-                    <div id="luz3" class="luces luz3"></div>
+                    <div id="luz1" class="luces"></div>
+                    <div id="luz2" class="luces"></div>
+                    <div id="luz3" class="luces"></div>
                 </div>
             </div>
 
@@ -43,19 +43,18 @@
 
                 <div id="pokemon" class="pantalla">
                     <!-- sprites/other/oficial-artwork -->
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-                        alt="bulbasaur" id="img_pokemon">
+                    <img class="img_pokemon" src="resources/imgs/Pokeball.png" alt="" id="img_pokemon">
 
                     <!-- NOMBRE-NUMERO -->
-                    <div class="cnt_nombre">
-                        <span id="numero">#01</span> <span id="nombre">Bulbasaur</span>
+                    <div class="cnt_nombre ">
+                        <span id="numero"></span> <span id="nombre">Pokémon</span>
                     </div>
 
                 </div>
 
                 <!-- ESTADISTICAS -->
                 <div id="estadisticas">
-                    <p class="cnt_nombre">Estadísticas base</p>
+                    <p class="cnt_nombre2">Estadísticas base</p>
                     <div class="estadisticas_bars">
                         <div class="cnt_progres">
                             <label for="ps">PS</label>
@@ -101,14 +100,14 @@
 
             <!-- BUSCADOR - PANEL -->
             <section id="panel">
-                <div id="buscador">
-                    bulbasaur
-                </div>
+                <label for="buscador"></label>
+                <input type="text" id="buscador" class="buscador" name="buscador">
+
                 <div class="cnt_control">
                     <div class="control">
-                        <img id="btn_arriba" src="resources/imgs/iconos/up.svg" alt="botón arriba">
-                        <div class="control_btn" id="centro">Go</div>
-                        <img id="btn_abajo" src="resources/imgs/iconos/bot.svg" alt="botón abajo">
+                        <button><img id="btn_arriba" src="resources/imgs/iconos/up.svg" alt="botón arriba"></button>
+                        <button class="control_btn" id="centro">Go</button>
+                        <button><img id="btn_abajo" src="resources/imgs/iconos/bot.svg" alt="botón abajo"></button>
                     </div>
                 </div>
 
@@ -117,12 +116,13 @@
             <!-- DATOS TIPO -->
             <section id="informacion">
                 <div class="cnt_tipos_datos">
-                    <div id="tipos">
-                        <div class="tipo tipo1">Tipo1</div>
-                        <div class="tipo tipo2">Tipo2</div>
+                    <p id="saludo" class="invisible">Bienvenido</p>
+                    <div id="tipos" class="tipos invisible">
+                        <!-- <div class="tipo tipo1">Tipo1</div> -->
+                        <!-- <div class="tipo tipo2">Tipo2</div> -->
                     </div>
-                    <div id="datos">
-                        <p id="descripcion">Pokemon semilla</p>
+                    <div id="datos" class="datos invisible">
+                        <p id="descripcion"></p>
                         <div class="datos_p_a">
                             <div class="datos_peso">
                                 <span id="peso">Peso</span>
@@ -165,6 +165,6 @@
 
 </body>
 
-<script src="pokedex/resources/"></script>
+<script src="resources/js/script.js"></script>
 
 </html>
