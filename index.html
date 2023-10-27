@@ -57,12 +57,37 @@
                 <div id="estadisticas">
                     <p class="cnt_nombre">Estadísticas base</p>
                     <div class="estadisticas_bars">
-                        <progress value="50" max="300" id="ps" class="estadisticas"></progress>
-                        <progress value="50" max="300" id="atk" class="estadisticas"></progress>
-                        <progress value="50" max="300" id="def" class="estadisticas"></progress>
-                        <progress value="50" max="300" id="atkE" class="estadisticas"></progress>
-                        <progress value="50" max="300" id="defE" class="estadisticas"></progress>
-                        <progress value="50" max="300" id="vel" class="estadisticas"></progress>
+                        <div class="cnt_progres">
+                            <label for="ps">PS</label>
+                            <progress value="50" max="300" id="ps" class="estadisticas">50</progress>
+                            <span>50</span>
+                        </div>
+                        <div class="cnt_progres">
+                            <label for="atk">Ataque</label>
+                            <progress value="50" max="300" id="atk" class="estadisticas">50</progress>
+                            <span>50</span>
+                        </div>
+                        <div class="cnt_progres">
+                            <label for="def">Defensa</label>
+                            <progress value="50" max="300" id="def" class="estadisticas">50</progress>
+                            <span>50</span>
+                        </div>
+                        <div class="cnt_progres">
+                            <label for="atkE">Ataque Esp.</label>
+                            <progress value="50" max="300" id="atkE" class="estadisticas">50</progress>
+                            <span>50</span>
+                        </div>
+                        <div class="cnt_progres">
+                            <label for="defe">Defensa Esp.</label>
+                            <progress value="50" max="300" id="defE" class="estadisticas">50</progress>
+                            <span>50</span>
+                        </div>
+                        <div class="cnt_progres">
+                            <label for="vel">Velocidad</label>
+                            <progress value="50" max="300" id="vel" class="estadisticas">50</progress>
+                            <span>50</span>
+                        </div>
+
                     </div>
                 </div>
 
@@ -81,16 +106,9 @@
                 </div>
                 <div class="cnt_control">
                     <div class="control">
-                        <!-- control se debe dividir en 6 cuadrados con grid -->
-                        <div></div>
-                        <div class="control_btn" id="arriba"></div>
-                        <div></div>
-                        <div class="control_btn" id="izquierda"></div>
+                        <img id="btn_arriba" src="resources/imgs/iconos/up.svg" alt="botón arriba">
                         <div class="control_btn" id="centro">Go</div>
-                        <div class="control_btn" id="derecha"></div>
-                        <div></div>
-                        <div class="control_btn" id="abajo"></div>
-                        <div></div>
+                        <img id="btn_abajo" src="resources/imgs/iconos/bot.svg" alt="botón abajo">
                     </div>
                 </div>
 
@@ -136,11 +154,6 @@
     </div>
 
 </body>
-<!-- HABILIDAD -->
-
-
-
-
 
 <script src="pokedex/resources/"></script>
 
