@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - anthoox</title>
+    <link rel="stylesheet" href="resources/css/estilos.css">
+    <link rel="stylesheet" href="resources/css/encendido.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&family=Share+Tech+Mono&family=VT323&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="contenedor">
+        <!-- CABECERA -->
+        <!-- Que contenga un boton de encender y apagar -->
+        <header>
+            <div class="cnt_btn_luces">
+                <div class="btn encendido">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox" class="switch">
+                        <div class="powersign"></div>
+                    </label>
+                </div>
+                <div class="cnt_luces">
+                    <div id="luz1" class="luces luz1"></div>
+                    <div id="luz2" class="luces luz2"></div>
+                    <div id="luz3" class="luces luz3"></div>
+                </div>
+            </div>
+
+            <span class="cnt_vacio"></span>
+        </header>
+
+        <main>
+            <!-- PANTALLA/IMAGEN -->
+            <!-- Que antes de buscar un pokemon, haya una pokebal -->
+            <section id="cnt_pantalla">
+
+                <div id="pokemon" class="pantalla">
+                    <!-- sprites/other/oficial-artwork -->
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                        alt="bulbasaur" id="img_pokemon">
+
+                    <!-- NOMBRE-NUMERO -->
+                    <div class="cnt_nombre">
+                        <span id="numero">#01</span> <span id="nombre">Bulbasaur</span>
+                    </div>
+
+                </div>
+
+                <!-- ESTADISTICAS -->
+                <div id="estadisticas">
+                    <p class="cnt_nombre">Estadísticas base</p>
+                    <div class="estadisticas_bars">
+                        <progress value="50" max="300" id="ps" class="estadisticas"></progress>
+                        <progress value="50" max="300" id="atk" class="estadisticas"></progress>
+                        <progress value="50" max="300" id="def" class="estadisticas"></progress>
+                        <progress value="50" max="300" id="atkE" class="estadisticas"></progress>
+                        <progress value="50" max="300" id="defE" class="estadisticas"></progress>
+                        <progress value="50" max="300" id="vel" class="estadisticas"></progress>
+                    </div>
+                </div>
+
+                <div class="altavoz">
+                    <hr />
+                    <hr />
+                    <hr />
+                    <hr />
+                </div>
+            </section>
+
+            <!-- BUSCADOR - PANEL -->
+            <section id="panel">
+                <div id="buscador">
+                    bulbasaur
+                </div>
+                <div class="cnt_control">
+                    <div class="control">
+                        <!-- control se debe dividir en 6 cuadrados con grid -->
+                        <div></div>
+                        <div class="control_btn" id="arriba"></div>
+                        <div></div>
+                        <div class="control_btn" id="izquierda"></div>
+                        <div class="control_btn" id="centro">Go</div>
+                        <div class="control_btn" id="derecha"></div>
+                        <div></div>
+                        <div class="control_btn" id="abajo"></div>
+                        <div></div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- DATOS TIPO -->
+            <section id="informacion">
+                <div class="cnt_tipos_datos">
+                    <div id="tipos">
+                        <div class="tipo tipo1">Tipo1</div>
+                        <div class="tipo tipo2">Tipo2</div>
+                    </div>
+                    <div id="datos">
+                        <p id="descripcion">Pokemon semilla</p>
+                        <div class="datos_p_a">
+                            <div class="datos_peso">
+                                <span id="peso">Peso</span>
+                                <span id="valor_peso">5kg</span>
+                            </div>
+                            <div class="datos_altura">
+                                <span id="altura">Altura</span>
+                                <span id="valor_altura">0.3m</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="habilidades">
+                    <p id="habilidad_comun">Hierba alta</p>
+                    <p id="habilidad_oculta">Hierba baja</p>
+                </div>
+            </section>
+
+            <section id="botones">
+                <button>Base</button><button>Min</button><button>Max</button>
+            </section>
+
+        </main>
+        <footer>
+            <img id="logo" class="footer__logo" src="resources/imgs/logo/mo_logo_cyan_f2.png" alt="Logo web">
+        </footer>
+
+    </div>
+
+</body>
+<!-- HABILIDAD -->
+
+
+
+
+
+<script src="pokedex/resources/"></script>
+
+</html>
