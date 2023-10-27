@@ -50,6 +50,7 @@ html {
 }
 
 .contenedor {
+    min-width: 281px;
     border: 1px solid #000000;
     max-width: 400px;
     background-color: var(--pokedex);
@@ -151,6 +152,8 @@ main {
     /* display: none; */
 }
 
+
+
 #estadisticas .estadisticas_bars {
     margin-bottom: .5em;
     position: relative;
@@ -174,28 +177,30 @@ main {
 }
 
 #estadisticas label {
+    font-family: 'Share Tech Mono', monospace;
     position: absolute;
     left: 27px;
-    top: 6px;
+    top: 7px;
     color: var(--primario);
     font-weight: 500;
-    font-size: .8em;
+    font-size: .9em;
 }
 
 #estadisticas span {
+    font-family: 'Share Tech Mono', monospace;
     position: absolute;
     right: 27px;
-    top: 6px;
+    top: 7px;
     color: var(--primario);
     font-weight: 500;
-    font-size: .8em;
+    font-size: .9em;
 }
 
 
 #estadisticas progress {
     margin: auto;
     width: 85%;
-    height: 28px;
+    height: 30px;
 }
 
 .pantalla img {
@@ -206,7 +211,7 @@ main {
 
 .pantalla .cnt_nombre {
     text-align: center;
-    margin-bottom: .5em;
+    margin-bottom: .75em;
 }
 
 #numero,
@@ -252,7 +257,7 @@ main {
     background-color: var(--buscador);
     color: #000000;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .cnt_control {
@@ -281,6 +286,7 @@ main {
 
 #centro {
     display: flex;
+    font-size: .9em;
     justify-content: center;
     align-items: center;
     border-radius: 1em;
@@ -311,7 +317,6 @@ main {
 #informacion p,
 #informacion span,
 #informacion div {
-    /* font-weight: 600; */
     font-size: 1em;
     font-family: 'Share Tech Mono', monospace;
 }
@@ -379,14 +384,35 @@ main {
     /* display: none; */
 }
 
-#habilidades p {
-    border-radius: 1em;
-    border: 1px solid black;
+.cnt_habilidad {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
+.cnt_habilidad:nth-child(2) {
+    margin-top: -1em;
+}
+
+.cnt_habilidad label {
+    position: absolute;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 100;
+    width: 100%;
+    font-size: .9em;
+    text-align: center;
+    top: 10px;
+}
+
+.cnt_habilidad progress {
+    width: 90%;
+    height: 36px;
+}
 
 /* BOTONES  BASE MIN MAX*/
 #botones {
+    font-size: .9em;
     padding: 1em;
     display: flex;
     justify-content: center;
@@ -439,14 +465,14 @@ footer #logo {
 
     #estadisticas label {
         left: 30px;
-        top: 7px;
-        font-size: .8em;
+        /* top: 7px; */
+        /* font-size: .8em; */
     }
 
     #estadisticas span {
         right: 30px;
-        top: 7px;
-        font-size: .8em;
+        /* top: 7px; */
+        /* font-size: .8em; */
     }
 
 
@@ -465,13 +491,13 @@ footer #logo {
     #estadisticas label {
         left: 33px;
         top: 8px;
-        font-size: .8em;
+        /* font-size: .8em; */
     }
 
     #estadisticas span {
         right: 33px;
         top: 8px;
-        font-size: .8em;
+        /* font-size: .8em; */
     }
 
     #estadisticas progress {
@@ -486,12 +512,12 @@ footer #logo {
 
     #estadisticas label {
         left: 35px;
-        top: 10px;
+        top: 9px;
     }
 
     #estadisticas span {
         right: 35px;
-        top: 10px;
+        top: 9px;
     }
 
 
@@ -507,13 +533,13 @@ footer #logo {
     #estadisticas label {
         left: 37px;
         top: 10px;
-        font-size: .9em;
+        font-size: 1em;
     }
 
     #estadisticas span {
         right: 37px;
         top: 10px;
-        font-size: .9em;
+        font-size: 1em;
     }
 
 
@@ -521,6 +547,24 @@ footer #logo {
         margin: auto;
         width: 85%;
         height: 38px;
+    }
+
+    #centro {
+        font-size: 1em;
+    }
+
+    .cnt_habilidad progress {
+        width: 90%;
+        height: 38px;
+    }
+
+    .cnt_habilidad label {
+        font-size: 1em;
+        top: 10px;
+    }
+
+    #botones {
+        font-size: 1em;
     }
 }
 
@@ -545,14 +589,14 @@ footer #logo {
         left: 42px;
         top: 11px;
         font-weight: 600;
-        font-size: .9em;
+
     }
 
     #estadisticas span {
         right: 42px;
         top: 11px;
         font-weight: 600;
-        font-size: .9em;
+
     }
 
 
@@ -561,6 +605,17 @@ footer #logo {
         width: 85%;
         height: 40px;
     }
+
+    .cnt_habilidad label {
+        font-weight: 600;
+
+        top: 12px;
+    }
+
+    .cnt_habilidad progress {
+        height: 40px;
+    }
+
 }
 
 @media screen and (min-width: 545px) {
