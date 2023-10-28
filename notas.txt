@@ -1,0 +1,18 @@
+que el input para buscar no sea clicable al estar apagada - hecho
+Cuando se le de a enter que busque - hecho
+respuestas ante peticiones nullas en el input - hecho
+o mostrar un mensaje indicando que introduzca el numero o nombre del pokemon - hecho
+respuesta a peticiones de string que no sean pokemon o ids - hecho
+con la pokedex apagada que no funcione el go - hecho
+Que se apaguen las pantallas de estadisticas y habilidad - hecho
+si no se ha buscado pokemon, al darle a arriba o a abajo que muestre un mensaje o no haga nada - hecho
+Que la primera letra vaya en mayusculas - hecho
+Si tiene solo una habilidad que la otra no se muestre - hecho
+
+
+Agrupar las funciones en otro archivo
+agrupar las variables en un archivo de variables
+agrupar los addEventListener en otro archivo
+
+Poner en español
+Gestionar errores
