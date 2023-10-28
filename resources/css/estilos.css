@@ -16,24 +16,98 @@
 
     /* Colores tipo */
     --normal: #AAA976;
-    --Fuego: #F18131;
-    --agua: #698CF3;
-    --planta: #78C947;
-    --electrico: #F9D134;
-    --hielo: #99D8D8;
-    --lucha: #C3302C;
-    --venenero: #A13E9C;
-    --tierra: #E5BE68;
-    --vuelo: #AA8FF6;
-    --psiquico: #F95887;
-    --bicho: #ABB81B;
-    --roca: #B49C38;
-    --fantasma: #6F5799;
-    --siniestro: #735A4E;
+    --fire: #F18131;
+    --water: #698CF3;
+    --grass: #78C947;
+    --electric: #F9D134;
+    --ice: #99D8D8;
+    --fighting: #C3302C;
+    --poison: #A13E9C;
+    --ground: #E5BE68;
+    --flying: #AA8FF6;
+    --psychic: #F95887;
+    --bug: #ABB81B;
+    --rock: #B49C38;
+    --ghost: #6F5799;
+    --dark: #735A4E;
     --dragon: #7137FD;
-    --acero: #B8B7CF;
-    --hada: #F1B5BE;
+    --steel: #B8B7CF;
+    --fairy: #F1B5BE;
 }
+
+.normal {
+    background-color: var(--normal);
+}
+
+.fire {
+    background-color: var(--fire);
+}
+
+.water {
+    background-color: var(--water);
+}
+
+.grass {
+    background-color: var(--grass);
+}
+
+.electric {
+    background-color: var(--electric);
+}
+
+.ice {
+    background-color: var(--ice);
+}
+
+.fighting {
+    background-color: var(--fighting);
+}
+
+.poison {
+    background-color: var(--poison);
+}
+
+.ground {
+    background-color: var(--ground);
+}
+
+.flying {
+    background-color: var(--flying);
+}
+
+.psychic {
+    background-color: var(--psychic);
+}
+
+.bug {
+    background-color: var(--bug);
+}
+
+.rock {
+    background-color: var(--rock);
+}
+
+.ghost {
+    background-color: var(--ghost);
+}
+
+.dragon {
+    background-color: var(--dragon);
+}
+
+.dark {
+    background-color: var(--dark);
+}
+
+.steel {
+    background-color: var(--steel);
+}
+
+.fairy {
+    background-color: var(--fairy);
+}
+
+
 
 /* CONFIGURACIÓN GENERAL */
 * {
@@ -383,7 +457,6 @@ main {
     border: 1px solid black;
     padding: .25em 1em;
     border-radius: .5em;
-    background-color: var(--acero);
 }
 
 .invisible {
@@ -403,12 +476,12 @@ main {
     padding: 0 1em;
     position: absolute;
     background-color: var(--pantallaOn);
-    border: 1px solid black;
+
     border-radius: 1em;
-    top: 0;
-    bottom: 0;
-    left: 8px;
-    right: 8px;
+    top: 1px;
+    bottom: 1px;
+    left: 17px;
+    right: 17px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -473,6 +546,10 @@ main {
 
 #botones button:active {
     scale: .9;
+}
+
+#botones img {
+    width: 25px;
 }
 
 

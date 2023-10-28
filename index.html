@@ -43,7 +43,8 @@
 
                 <div id="pokemon" class="pantalla">
                     <!-- sprites/other/oficial-artwork -->
-                    <img class="img_pokemon" src="resources/imgs/Pokeball.png" alt="" id="img_pokemon">
+                    <img class="img_pokemon" src="resources/imgs/Pokeball.png" alt="Imagen de Pokéball"
+                        id="img_pokemon">
 
                     <!-- NOMBRE-NUMERO -->
                     <div class="cnt_nombre ">
@@ -54,38 +55,8 @@
 
                 <!-- ESTADISTICAS -->
                 <div id="estadisticas">
-                    <p class="cnt_nombre2">Estadísticas base</p>
+                    <p class="cnt_nombre2"></p>
                     <div class="estadisticas_bars">
-                        <div class="cnt_progres">
-                            <label for="ps">PS</label>
-                            <progress value="50" max="300" id="ps" class="estadisticas">50</progress>
-                            <span>50</span>
-                        </div>
-                        <div class="cnt_progres">
-                            <label for="atk">Ataque</label>
-                            <progress value="50" max="300" id="atk" class="estadisticas">50</progress>
-                            <span>50</span>
-                        </div>
-                        <div class="cnt_progres">
-                            <label for="def">Defensa</label>
-                            <progress value="50" max="300" id="def" class="estadisticas">50</progress>
-                            <span>50</span>
-                        </div>
-                        <div class="cnt_progres">
-                            <label for="atkE">Ataque Esp.</label>
-                            <progress value="50" max="300" id="atkE" class="estadisticas">50</progress>
-                            <span>50</span>
-                        </div>
-                        <div class="cnt_progres">
-                            <label for="defe">Defensa Esp.</label>
-                            <progress value="50" max="300" id="defE" class="estadisticas">50</progress>
-                            <span>50</span>
-                        </div>
-                        <div class="cnt_progres">
-                            <label for="vel">Velocidad</label>
-                            <progress value="50" max="300" id="vel" class="estadisticas">50</progress>
-                            <span>50</span>
-                        </div>
 
                     </div>
                 </div>
@@ -138,14 +109,14 @@
                 </div>
                 <div id="habilidades">
                     <div class="cnt_habilidad">
-                        <label for="comun">Habilidad comun</label>
-                        <progress id="comun" value="100" max="100">
+                        <label id="comun" for="comun">Habilidad comun</label>
+                        <progress value="100" max="100">
 
                         </progress>
                     </div>
                     <div class="cnt_habilidad">
-                        <label for="oculta">Habilidad oculta</label>
-                        <progress id="oculta" value="20" max="100">
+                        <label id="oculta" for="oculta">Habilidad oculta</label>
+                        <progress value="20" max="100">
 
                         </progress>
                     </div>
@@ -153,7 +124,7 @@
             </section>
 
             <section id="botones">
-                <button>Base</button><button>Min</button><button>Max</button>
+                <button id="stats"><img src="resources/imgs/iconos/vida.svg" alt=""></button>
             </section>
 
         </main>
