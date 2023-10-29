@@ -25,12 +25,6 @@ const {
     abajo
 } = constantes;
 
-let numeroPokemon;
-
-// URL de PokeAPi
-let URL = 'https://pokeapi.co/api/v2/pokemon/';
-let URL2 = 'https://pokeapi.co/api/v2/pokemon-species/';
-
 /*
  * Poner en mayusculas la primera letra
  */
@@ -39,9 +33,8 @@ export function primeraEnMayusculas(pokemon) {
 }
 
 /*
- * Carga las habilidades del pokemon dependiendo de cuantas tenga
+ * Carga las habilidades del pokemon dependiendo de cuantas tenga y las añade al DOM
  */
-
 export function cargarHabilidades(data) {
     if (data.length > 1) {
         document.querySelector('#habilidades').innerHTML = `
@@ -113,52 +106,20 @@ export function cargarEstadisticas(data) {
  */
 export function mostrarDescripcion(data) {
 
-    URL2 = 'https://pokeapi.co/api/v2/pokemon-species/';
     buscador.value = '';
 
     cntNombre2.innerHTML = primeraEnMayusculas(data.name);
     descripcion.innerHTML = data.genera[5].genus;
-
-
 }
 
-// /*
-//  * Funciones para mostrar los datos del Pokémon
-//  */
-// export function mostrarPokemon(data) {
+/*
+ * Recibe un valor y encuentra la posición en el array y la busca en otro array
+ * devolviendo el tipo en español
+ */
+export function traductorTipos(tipo) {
+    let tiposI = ['normal', 'fire', 'water', 'grass', 'electric', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dark', 'dragon', 'steel', 'fairy'];
+    let tiposE = ['Normal', 'Fuego', 'Agua', 'Planta', 'Eléctrico', 'Hielo', 'Luchador', 'Veneno', 'Tierra', 'Volador', 'Psiquico', 'Bicho', 'Roca', 'Fantasma', 'Siniestro', 'Dragón', 'Acero', 'Hada'];
 
-//     numeroPokemon = data.id;
-
-//     saludo.classList.add('invisible');
-//     tipos.classList.remove('invisible');
-//     datos.classList.remove('invisible');
-
-
-
-//     pokeball.src = `${data.sprites.other["official-artwork"].front_default}`;
-//     pokeball.alt = `${data.name}`;
-//     nombre.innerHTML = primeraEnMayusculas(`${data.name}`);
-//     numero.innerHTML = `#${data.id}`;
-//     altura.innerHTML = (`${data.height}` / 10) + "m";
-//     peso.innerHTML = (`${data.weight}` / 10) + "kg";
-
-//     // Mapeado para obtener un array con los tipos
-//     let tipo = data.types.map(type => type.type.name);
-//     if (data.types.length >= 2) {
-//         tipos.innerHTML = `<div class="tipo tipo1 ${tipo[0]}">${tipo[0]}</div><div class="tipo tipo2 ${tipo[1]}">${tipo[1]}</div>`
-//     } else {
-//         tipos.innerHTML = `<div class="tipo tipo1 ${tipo}">${tipo}</div>`
-//     }
-
-//     //Mapeado de habilidades y añadiendo a su contenedor
-//     let habilidadesPokemon = data.abilities.map(habilidad => habilidad.ability.name)
-//     cargarHabilidades(habilidadesPokemon)
-
-
-//     // Mapeo de estadisticas del Pokemon
-//     let estadisticasPokemon = data.stats.map(stat => stat.base_stat)
-
-//     // cargar las estadisticas
-//     cargarEstadisticas(estadisticasPokemon);
-
-// }
+    let indice = tiposI.indexOf(tipo);
+    return tiposE[indice];
+}

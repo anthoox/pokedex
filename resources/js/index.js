@@ -1,4 +1,4 @@
-import { mostrarDescripcion, cargarEstadisticas, cargarHabilidades, primeraEnMayusculas } from "./funciones.js";
+import { mostrarDescripcion, cargarEstadisticas, cargarHabilidades, primeraEnMayusculas, traductorTipos } from "./funciones.js";
 import { constantes } from './constantes.js';
 const {
     interruptor,
@@ -25,38 +25,15 @@ const {
     arriba,
     abajo
 } = constantes;
-// const interruptor = document.querySelector('#checkbox');
-// const pantalla1 = document.querySelector('.pantalla');
-// const pantalla2 = document.querySelector('.cnt_tipos_datos');
-// const pantalla3 = document.querySelector('.buscador');
-// const luces = document.querySelectorAll('.luces');
-// const pokeball = document.querySelector('.img_pokemon');
-// const saludo = document.querySelector('#saludo');
-// const buscador = document.querySelector('#buscador');
 
-
-// const buscar = document.querySelector('#centro');
-// const cntNombre = document.querySelector('.cnt_nombre');
-// const cntNombre2 = document.querySelector('.cnt_nombre2');
-// const tipos = document.querySelector('#tipos');
-// const datos = document.querySelector('#datos');
-// const nombre = document.querySelector('#nombre');
-// const numero = document.querySelector('#numero');
-// const peso = document.querySelector('#valor_peso');
-// const altura = document.querySelector('#valor_altura');
-// const descripcion = document.querySelector('#descripcion');
-
-// const stats = document.querySelector('#stats');
-// const habilidades = document.querySelector('#habilidades');
-// const estadisticas = document.querySelector('#estadisticas');
-
-
-
-// const arriba = document.querySelector('#btn_arriba');
-// const abajo = document.querySelector('#btn_abajo');
-
-
+// Variable que almacenará el número del pokémon
 let numeroPokemon;
+
+// URL de PokeAPi
+let URL = 'https://pokeapi.co/api/v2/pokemon/';
+let URL2 = 'https://pokeapi.co/api/v2/pokemon-species/';
+
+
 // ENCENDIDO DE LA POKÉDEX
 interruptor.addEventListener('click', () => {
     pantalla1.classList.toggle('pantallaON');
@@ -124,9 +101,6 @@ interruptor.addEventListener('click', () => {
 
 
 
-// URL de PokeAPi
-let URL = 'https://pokeapi.co/api/v2/pokemon/';
-let URL2 = 'https://pokeapi.co/api/v2/pokemon-species/';
 
 
 // BUSCAR
@@ -152,6 +126,7 @@ buscar.addEventListener('click', () => {
         saludo.innerHTML = "Introduce el número o el nombre del Pokémon"
     }
 })
+
 // BUSCAR CON ENTER
 buscador.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
@@ -169,6 +144,7 @@ buscador.addEventListener('keyup', (e) => {
             fetch(URL2)
                 .then((response) => response.json())
                 .then(data => mostrarDescripcion(data))
+
             buscador.value = '';
 
         } else {
@@ -176,7 +152,8 @@ buscador.addEventListener('keyup', (e) => {
         }
     }
 })
-// ARRIBA
+
+// Buscar el siguiente pokémon con el botón de ARRIBA
 arriba.addEventListener('click', () => {
     numeroPokemon += 1;
 
@@ -195,7 +172,7 @@ arriba.addEventListener('click', () => {
 
 })
 
-// ABAJO
+// Buscar el anterior pokémon con el botón de
 abajo.addEventListener('click', () => {
     numeroPokemon -= 1;
 
@@ -215,109 +192,8 @@ abajo.addEventListener('click', () => {
 
 })
 
-/*
- * Funciones para mostrar los datos del Pokémon
- */
-function mostrarPokemon(data) {
 
-    numeroPokemon = data.id;
-
-    saludo.classList.add('invisible');
-    tipos.classList.remove('invisible');
-    datos.classList.remove('invisible');
-
-
-
-    pokeball.src = `${data.sprites.other["official-artwork"].front_default}`;
-    pokeball.alt = `${data.name}`;
-    nombre.innerHTML = primeraEnMayusculas(`${data.name}`);
-    numero.innerHTML = `#${data.id}`;
-    altura.innerHTML = (`${data.height}` / 10) + "m";
-    peso.innerHTML = (`${data.weight}` / 10) + "kg";
-
-    // Mapeado para obtener un array con los tipos
-    let tipo = data.types.map(type => type.type.name);
-    if (data.types.length >= 2) {
-        tipos.innerHTML = `<div class="tipo tipo1 ${tipo[0]}">${tipo[0]}</div><div class="tipo tipo2 ${tipo[1]}">${tipo[1]}</div>`
-    } else {
-        tipos.innerHTML = `<div class="tipo tipo1 ${tipo}">${tipo}</div>`
-    }
-
-    //Mapeado de habilidades y añadiendo a su contenedor
-    let habilidadesPokemon = data.abilities.map(habilidad => habilidad.ability.name)
-    cargarHabilidades(habilidadesPokemon)
-
-
-    // Mapeo de estadisticas del Pokemon
-    let estadisticasPokemon = data.stats.map(stat => stat.base_stat)
-
-    // cargar las estadisticas
-    cargarEstadisticas(estadisticasPokemon);
-
-}
-
-
-/*
- * Funciones para mostrar los datos del Pokémon
- */
-// function mostrarPokemon(data) {
-
-//     numeroPokemon = data.id;
-
-//     saludo.classList.add('invisible');
-//     tipos.classList.remove('invisible');
-//     datos.classList.remove('invisible');
-
-
-
-//     pokeball.src = `${data.sprites.other["official-artwork"].front_default}`;
-//     pokeball.alt = `${data.name}`;
-//     nombre.innerHTML = primeraEnMayusculas(`${data.name}`);
-//     numero.innerHTML = `#${data.id}`;
-//     altura.innerHTML = (`${data.height}` / 10) + "m";
-//     peso.innerHTML = (`${data.weight}` / 10) + "kg";
-
-//     // Mapeado para obtener un array con los tipos
-//     let tipo = data.types.map(type => type.type.name);
-//     if (data.types.length >= 2) {
-//         tipos.innerHTML = `<div class="tipo tipo1 ${tipo[0]}">${tipo[0]}</div><div class="tipo tipo2 ${tipo[1]}">${tipo[1]}</div>`
-//     } else {
-//         tipos.innerHTML = `<div class="tipo tipo1 ${tipo}">${tipo}</div>`
-//     }
-
-//     //Mapeado de habilidades y añadiendo a su contenedor
-//     let habilidadesPokemon = data.abilities.map(habilidad => habilidad.ability.name)
-//     cargarHabilidades(habilidadesPokemon)
-
-
-//     // Mapeo de estadisticas del Pokemon
-//     let estadisticasPokemon = data.stats.map(stat => stat.base_stat)
-
-//     // cargar las estadisticas
-//     cargarEstadisticas(estadisticasPokemon);
-
-// }
-
-/*
- * Genera la descripción en un elemento HTML a partir de otra sección de la API
- */
-// function mostrarDescripcion(data) {
-
-//     URL2 = 'https://pokeapi.co/api/v2/pokemon-species/';
-//     buscador.value = '';
-
-//     cntNombre2.innerHTML = primeraEnMayusculas(data.name);
-//     descripcion.innerHTML = data.genera[5].genus;
-
-
-// }
-
-
-/*
- * Mostar los elementos con las estadisticas y las habilidades del pokemon
- * No carga los datos 
- * No funciona con Pokédex apagada
- */
+// Modifica el display de elementos del DOM tras pulsar el botón de estadísticas
 stats.addEventListener('click', () => {
     if (luces[2].classList.contains('luz3')) {
         if (pokeball.alt != 'Imagen de Pokéball') {
@@ -336,76 +212,44 @@ stats.addEventListener('click', () => {
 
 
 /*
- * Carga la estadísticas del pokemon
+ * Funciones para mostrar los datos del Pokémon. Recibe la respuesta del Json y la procesa
+ * haciendo mapeo de algunos datos.
+ * Muestra y oculta elementos del DOM
  */
-// function cargarEstadisticas(data) {
-//     const cnt_estadisticas = document.querySelector('.estadisticas_bars');
-//     cnt_estadisticas.innerHTML =
-//         `<div class="cnt_progres">
-//             <label for="ps">PS</label>
-//             <progress value="${data[0]}" max="150" id="ps" class="estadisticas">${data[0]}</progress>
-//             <span>${data[0]}</span>
-//         </div>
-//         <div class="cnt_progres">
-//             <label for="atk">Ataque</label>
-//             <progress value="${data[1]}" max="150" id="atk" class="estadisticas">${data[1]}</progress>
-//             <span>${data[1]}</span>
-//         </div>
-//         <div class="cnt_progres">
-//             <label for="def">Defensa</label>
-//             <progress value="${data[2]}" max="150" id="def" class="estadisticas">${data[2]}</progress>
-//             <span>${data[2]}</span>
-//         </div>
-//         <div class="cnt_progres">
-//             <label for="atkE">Ataque Esp.</label>
-//             <progress value="${data[3]}" max="150" id="atkE" class="estadisticas">${data[3]}</progress>
-//             <span>${data[3]}</span>
-//         </div>
-//         <div class="cnt_progres">
-//             <label for="defe">Defensa Esp.</label>
-//             <progress value="${data[4]}" max="150" id="defE" class="estadisticas">${data[4]}</progress>
-//             <span>${data[4]}</span>
-//         </div>
-//         <div class="cnt_progres">
-//             <label for="vel">Velocidad</label>
-//             <progress value="${data[5]}" max="150" id="vel" class="estadisticas">${data[5]}</progress>
-//             <span>${data[5]}</span>
-//         </div> `
-// }
+function mostrarPokemon(data) {
 
-// /*
-//  * Carga las habilidades del pokemon dependiendo de cuantas tenga
-//  */
-// function cargarHabilidades(data) {
-//     if (data.length > 1) {
-//         document.querySelector('#habilidades').innerHTML = `
-//             <div class="cnt_habilidad">
-//                 <label id="comun" for="comun">${data[0]}</label>
-//                 <progress value="100" max="100">
-//                 100
-//                 </progress>
-//             </div>
-//             <div class="cnt_habilidad">
-//                 <label id="comun" for="comun">${data[1]}</label>
-//                 <progress value="20" max="100">
-//                 20
-//                 </progress>
-//             </div>`
-//     } else {
-//         document.querySelector('#habilidades').innerHTML = `
-//             <div class="cnt_habilidad">
-//                 <label id="comun" for="comun">${data[0]}</label>
-//                 <progress value="100" max="100">
-//                 100
-//                 </progress>
-//             </div>`
-//     }
+    numeroPokemon = data.id;
 
-// }
+    saludo.classList.add('invisible');
+    tipos.classList.remove('invisible');
+    datos.classList.remove('invisible');
 
-// /*
-//  * Poner en mayusculas la primera letra
-//  */
-// function primeraEnMayusculas(pokemon) {
-//     return pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
-// }  
+
+    pokeball.src = `${data.sprites.other["official-artwork"].front_default}`;
+    pokeball.alt = `${data.name}`;
+    nombre.innerHTML = primeraEnMayusculas(`${data.name}`);
+    numero.innerHTML = `#${data.id}`;
+    altura.innerHTML = (`${data.height}` / 10) + "m";
+    peso.innerHTML = (`${data.weight}` / 10) + "kg";
+
+    // Mapeado para obtener un array con los tipos
+    let tipo = data.types.map(type => type.type.name);
+    if (data.types.length >= 2) {
+        tipos.innerHTML = `<div class="tipo tipo1 ${tipo[0]}">${traductorTipos(tipo[0])}</div><div class="tipo tipo2 ${tipo[1]}">${traductorTipos(tipo[1])}</div>`
+    } else {
+        tipos.innerHTML = `<div class="tipo tipo1 ${tipo}">${traductorTipos(tipo[0])}</div>`
+    }
+
+    //Mapeado de habilidades y añadiendo a su contenedor
+    let habilidadesPokemon = data.abilities.map(habilidad => habilidad.ability.name)
+    cargarHabilidades(habilidadesPokemon)
+
+
+    // Mapeo de estadisticas del Pokemon
+    let estadisticasPokemon = data.stats.map(stat => stat.base_stat)
+
+    // cargar las estadisticas
+    cargarEstadisticas(estadisticasPokemon);
+
+}
+
