@@ -124,6 +124,10 @@ html {
     background-color: #BFA6A2;
 }
 
+body{
+    padding: 3rem;
+}
+
 .contenedor {
     min-width: 281px;
     border: 1px solid #000000;
@@ -562,6 +566,8 @@ footer {
 }
 
 footer #logo {
+    background-color: red;
+    border-radius: 50%;
     width: 50px;
 }
 
